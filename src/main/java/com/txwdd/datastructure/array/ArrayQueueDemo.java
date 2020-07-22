@@ -51,7 +51,7 @@ class ArrayQueue {
         real = -1;
     }
 
-    //判断队列是否已满
+    //判断队列是否已满 数组下标从0开始 最大index==maxSize-1
     public boolean isFull() {
         return real == maxSize - 1;
     }
