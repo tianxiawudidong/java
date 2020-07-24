@@ -2,6 +2,10 @@ package com.txwdd.datastructure.sort;
 
 import java.util.Arrays;
 
+/**
+ * 冒泡排序
+ * 每一轮排序 把最大的值移动到最后的位置
+ */
 public class BubbleSort {
 
     public static void main(String[] args) {
