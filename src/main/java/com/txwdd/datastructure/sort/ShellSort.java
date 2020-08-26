@@ -16,14 +16,14 @@ public class ShellSort {
 
     public static void main(String[] args) {
 
-//        int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
-        int[] arr = new int[80000];
-        for (int i = 0; i < 80000; i++) {
-            arr[i] = (int) (Math.random() * 8000000);
-        }
+        int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+//        int[] arr = new int[80000];
+//        for (int i = 0; i < 80000; i++) {
+//            arr[i] = (int) (Math.random() * 8000000);
+//        }
 //        System.out.println("原始数组为：" + Arrays.toString(arr));
-//        shellSort(arr);
-        shellSort2(arr);
+        shellSort(arr);
+//        shellSort2(arr);
 //        System.out.println("希尔排序后数组为：" + Arrays.toString(arr));
     }
 
@@ -37,28 +37,27 @@ public class ShellSort {
 
         //第一轮排序
         //分组  size/2 ==>  5
-        long start = System.currentTimeMillis();
-        int temp;
-        for (int gap = arr.length / 2; gap > 0; gap = gap / 2) {
-            for (int i = gap; i < arr.length; i++) {
-                //遍历各组中所有的元素(共5组 每组2个元素，) 步长5
-                for (int j = i - gap; j >= 0; j -= gap) {
-                    //如果当前元素 大于加上步长后的那个元素  说明交换
-                    if (arr[j] > arr[j + gap]) {
-                        temp = arr[j];
-                        arr[j] = arr[j + gap];
-                        arr[j + gap] = temp;
-                    }
-                }
-            }
-            //3 5 1 6 0  8 9 4 7 2
-//            System.out.println("希尔排序1轮后=" + Arrays.toString(arr));
-        }
-        long end = System.currentTimeMillis();
-        System.out.println("use time:" + (end - start));
+//        long start = System.currentTimeMillis();
+//        int temp;
+//        for (int gap = arr.length / 2; gap > 0; gap = gap / 2) {
+//            for (int i = gap; i < arr.length; i++) {
+//                //遍历各组中所有的元素(共5组 每组2个元素，) 步长5
+//                for (int j = i - gap; j >= 0; j -= gap) {
+//                    //如果当前元素 大于加上步长后的那个元素  说明交换
+//                    if (arr[j] > arr[j + gap]) {
+//                        temp = arr[j];
+//                        arr[j] = arr[j + gap];
+//                        arr[j + gap] = temp;
+//                    }
+//                }
+//            }
+//            //3 5 1 6 0  8 9 4 7 2
+////            System.out.println("希尔排序1轮后=" + Arrays.toString(arr));
+//        }
+//        long end = System.currentTimeMillis();
+//        System.out.println("use time:" + (end - start));
 
 
-        /*
         int temp;
         for (int i = 5; i < arr.length; i++) {
             //遍历各组中所有的元素(共5组 每组2个元素，) 步长5
@@ -103,7 +102,6 @@ public class ShellSort {
             }
         }
         System.out.println("希尔排序3轮后=" + Arrays.toString(arr));
-    */
 
     }
 
