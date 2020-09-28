@@ -34,14 +34,14 @@ public class Climb {
 
 
     public static void main(String[] args) {
-//        long start = System.currentTimeMillis();
-//        long res1 = climb1(50);
-//        long end = System.currentTimeMillis();
-//        System.out.println(res1+"--->use time:"+(end-start));
+        long start = System.currentTimeMillis();
+        long res1 = climb2(10);
+        long end = System.currentTimeMillis();
+        System.out.println(res1+"--->use time:"+(end-start));
 
 
         long start1 = System.currentTimeMillis();
-        long res2 = climb2(50);
+        long res2 = climb3(10);
         long end1 = System.currentTimeMillis();
         System.out.println(res2+"--->use time:"+(end1-start1));
 
@@ -76,6 +76,22 @@ public class Climb {
                 b = temp;
             }
             return temp;
+        }
+    }
+
+    private static int climb3(int n) {
+        if (n == 1) {
+            return 1;
+        } else if (n == 2) {
+            return 2;
+        } else {
+            int[] arr=new int[n];
+            arr[0]=1;
+            arr[1]=2;
+            for (int i = 2; i <n; i++) {
+                arr[i]=arr[i-1]+arr[i-2];
+            }
+            return arr[n-1];
         }
     }
 

@@ -23,12 +23,9 @@ package com.txwdd.lettcode;
 public class LongString {
 
     public static void main(String[] args) {
-        String str = "babad";
-        long start = System.currentTimeMillis();
+        String str = "cbbd";
         String s = longString(str);
-        long end = System.currentTimeMillis();
         System.out.println(s);
-        System.out.println("use time:"+(end-start));
     }
 
     private static String longString(String s) {
@@ -42,7 +39,7 @@ public class LongString {
         }
 
         for(int j=1;j<len;j++){
-            for(int i=0;i<j;i++){
+            for(int i=0;i<j && i<len-1;i++){
                 if(s.charAt(i) != s.charAt(j)){
                     dp[i][j]=false;
                 }else{
@@ -58,7 +55,7 @@ public class LongString {
                 }
             }
         }
-        return s.substring(start,max);
+        return s.substring(start,start+max);
     }
 
 }
