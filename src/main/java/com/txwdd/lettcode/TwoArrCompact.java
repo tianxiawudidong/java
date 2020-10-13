@@ -21,7 +21,6 @@ public class TwoArrCompact {
                 j++;
             }
         }
-
         /* 后面连个while循环是用来保证两个数组比较完之后剩下的一个数组里的元素能顺利传入 */
         while (i < a.length) {
             result[k++] = a[i++];
