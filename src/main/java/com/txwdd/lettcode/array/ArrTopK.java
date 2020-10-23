@@ -1,6 +1,5 @@
-package com.txwdd.lettcode;
+package com.txwdd.lettcode.array;
 
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 /**
@@ -42,8 +41,8 @@ public class ArrTopK {
     // 添加之后如果堆中元素个数大于k的时候，
     // 我们就把最顶端的元素给移除掉，
     // 因为是最小堆，所以移除的就是堆中最小的值
-    public static int findTopK(int[] arr,int k){
-        PriorityQueue<Integer> queue = new PriorityQueue<Integer>();
+    private static int findTopK(int[] arr, int k){
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
         for(int i:arr){
             queue.add(i);
             if(queue.size()>k){
