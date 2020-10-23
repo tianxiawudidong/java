@@ -1,4 +1,4 @@
-package com.txwdd.lettcode;
+package com.txwdd.lettcode.linkedlist;
 
 /**
  * 判断链表是否有环
@@ -34,7 +34,6 @@ public class LinkCycleTest {
             s = s.next;
             //一次走两步
             f = f.next.next;
-            System.out.println("s:"+s.value+"-->"+"f:"+f.value);
             //假如是有环链表那么返回true
             if(s == f)return true;
             //假如是无环链表那么返回false

@@ -37,10 +37,6 @@ public class TwoNumSum {
             if (map.containsKey(res)) {
                 return new int[]{map.get(res), i};
             }
-            //1-->0
-            //3-->1
-            //5-->3
-            //2-->4
             map.put(arr[i], i);
         }
         throw new RuntimeException("not found");

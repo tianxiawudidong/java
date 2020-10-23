@@ -1,5 +1,6 @@
 package com.txwdd.lettcode;
 
+
 import java.util.*;
 
 /**
@@ -100,34 +101,27 @@ public class Test {
         int mid = arr[(left + right) / 2];
         int temp;
         while (l <= r) {
-
             //遍历l--》mid 找到比mid大的值
             while (arr[l] < mid) {
                 l += 1;
             }
-
             while (arr[r] > mid) {
                 r -= 1;
             }
-
             if (l >= r) {
                 break;
             }
-
             //交换
             temp = arr[l];
             arr[l] = arr[r];
             arr[r] = temp;
-
             if (arr[l] == mid) {
                 r -= 1;
             }
-
             if (arr[r] == mid) {
                 l += 1;
             }
         }
-
         if (l == r) {
             l += 1;
             r -= 1;
@@ -178,31 +172,6 @@ public class Test {
         return str.substring(start, start + max);
     }
 
-    /**
-     * 链表反转
-     */
-    private static Linked reverseLinked(Linked linked) {
-        if (linked == null) return null;
-        Linked res = null;
-        Linked curr = linked;
-        while (curr != null) {
-            Linked temp = curr.next;
-            curr.next = res;
-            res = curr;
-            curr = temp;
-        }
-        return res;
-    }
-
-    private static void print(Linked head) {
-        if (head == null) {
-            return;
-        }
-        while (head != null) {
-            System.out.print(head.value + "-->");
-            head = head.next;
-        }
-    }
 
 
     /**

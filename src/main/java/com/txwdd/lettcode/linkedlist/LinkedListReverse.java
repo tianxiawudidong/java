@@ -1,4 +1,4 @@
-package com.txwdd.lettcode;
+package com.txwdd.lettcode.linkedlist;
 
 /**
  * 反转链表
@@ -19,51 +19,39 @@ public class LinkedListReverse {
 
     public static void main(String[] args) {
 
-        Linked head = new Linked(1);
-        head.next = new Linked(2);
-        head.next.next = new Linked(3);
-        head.next.next.next = new Linked(4);
-        head.next.next.next.next = new Linked(5);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
         print(head);
         System.out.println();
-        Linked reverse = reverse(head);
+        ListNode reverse = reverse(head);
         print(reverse);
 
 
     }
 
-    private static Linked reverse(Linked head) {
-        Linked pre = null;
-        Linked curr = head;
+    private static ListNode reverse(ListNode head) {
+        ListNode pre = null;
+        ListNode curr = head;
         while (curr != null) {
-            Linked temp = curr.next;
+            ListNode temp = curr.next;
             curr.next=pre;
             pre=curr;
             curr=temp;
         }
         return pre;
-
-        //1
-
     }
 
-    private static void print(Linked head) {
+    private static void print(ListNode head) {
         if (head == null) {
             return;
         }
         while (head != null) {
-            System.out.print(head.value + "-->");
+            System.out.print(head.val + "-->");
             head = head.next;
         }
     }
 }
 
-class Linked {
-    public int value;
-    public Linked next;
-
-    public Linked(int value) {
-        this.value = value;
-    }
-
-}
