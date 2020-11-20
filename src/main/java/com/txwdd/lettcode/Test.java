@@ -101,10 +101,11 @@ public class Test {
         int mid = arr[(left + right) / 2];
         int temp;
         while (l <= r) {
-            //遍历l--》mid 找到比mid大的值
+            //遍历 左边（l---->mid） 找到比mid大的值
             while (arr[l] < mid) {
                 l += 1;
             }
+            //遍历 右边（mid---->r） 找到比mid小的值
             while (arr[r] > mid) {
                 r -= 1;
             }

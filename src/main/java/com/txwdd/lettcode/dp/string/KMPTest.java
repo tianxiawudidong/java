@@ -1,4 +1,4 @@
-package com.txwdd.lettcode.string;
+package com.txwdd.lettcode.dp.string;
 
 import java.util.Arrays;
 
